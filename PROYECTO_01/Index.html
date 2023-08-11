@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/Styles.css">
+</head>
+<body>
+    <div class="imgs">
+        <img src="img/img1.avif">
+        <img src="img/img2.avif">
+        <img src="img/img3.avif">
+        <img src="img/img4.avif">
+        <img src="img/img5.avif">
+    </div>
+    <div class="contenedor">
+        <form action="php/Verificar.php" method="post">
+        <h1>Login</h1>
+        <label for="user">Correo:</label>
+        <input type="text" name="correo" id="correo">
+        <label for="pass">Contraseña:</label>
+        <input type="password" name="contrasena" id="contrasena">
+        <p>Aun no yienes una cuenta?? <a href="Crear.html">Crea aqui</a></p>
+        <button type="submit" class="Login">Login</button>
+        <input onclick="restablecer()" type="button" class="Restablecer" value="Restablecer Contraseña">
+    </form>
+    </div>
+    <script>
+        function restablecer() {
+            window.location.href = "Restablecer.html";
+          }          
+    </script>
+</body>
+</html>

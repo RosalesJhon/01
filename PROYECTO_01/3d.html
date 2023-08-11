@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="css/Chat.css">
+    <link rel="webside icon" type="png" href="./img/Logo.jpg">
+</head>
+
+<body>
+
+    <header class="cabeza">
+        <a id="menu-btn" href="#"><img src="img/icono.png" alt=""></a>
+        <a id="redes-btn" href="#"><img src="img/user-solid.svg" alt=""></a>
+    </header>
+    <div id="contecabeza">
+        <aside>
+            <div class="scrollable-content">
+                <header>
+                    <h1 class="logo">Opciones</h1>
+                </header>
+                <a class="menu" id="btn1" href="#">Inicio</a>
+                <a class="menu" id="btn2" href="#">Chats</a>
+                <a class="menu" id="btn3" href="#">Amigos</a>
+                <a class="menu" id="btn4" href="#">Solicitudes</a>
+                <a class="menu" id="btn5" href="#">Perfil</a>
+                <a class="menu" id="btn6" href="#">Catalogo</a>
+            </div>
+        </aside>
+    </div>
+    <div id="redes">
+        <div id="main">
+            <a class="red" href="https://www.facebook.com/yhordi07?mibextid=ZbWKwL" target="_blank"><img
+                    src="img/facebook.svg" alt=""></a>
+            <a class="red" href="https://instagram.com/yhordi_rosales?igshid=ZDdkNTZiNTM=" target="_blank"><img
+                    src="img/instagram.svg" alt=""></a>
+            <a class="red" href="https://twitter.com/RosalesJhordi20?t=N6B8LFDu-7a6LgaF1ZgISA&s=09" target="_blank"><img
+                    src="img/twitter.svg" alt=""></a>
+            <a class="red" href="https://wa.me/qr/X57S7ENRIGWFK1" target="_blank"><img src="img/whatsapp.svg"></a>
+            <a class="red" href="Login.html"><img src="img/escape.svg"></a>
+        </div>
+    </div>
+    <main>
+        <div ng-app="MyApp" ng-controller="MyControlador"
+            style="width: 100%; justify-content: center; text-align: center; margin: 2% 2%;">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <P><input type="text" onclick="buscar();" placeholder="Buscador" ng-model="filtro"
+                    style="width:40%; text-align: center; border:solid 1px; border-radius: 40px; padding: .5%; margin: 0 30%;">
+            </P>
+            <ul id="buscado" style="display:none; margin: 0 30%; width: 20%; position: absolute;
+                z-index: 9999;">
+                <li ng-repeat="x in nombres | filter:filtro"
+                    style="list-style: none; background:white; text-align:center; padding:5%">
+                    {{x}}
+                </li>
+            </ul>
+        </div>
+        <script>
+            function buscar() {
+                const overlayElement = document.querySelector('#buscado');
+                if (overlayElement) {
+                    overlayElement.style.display = 'block';
+                }
+            };
+            angular.module("MyApp", []).controller('MyControlador',
+                function ($scope) {
+                    $scope.nombres = [
+                        'Juan',
+                        'Pedro',
+                        'Pablo',
+                        'Alberta',
+                        'Martines',
+                        'Rosales',
+                        'Jhon'
+                    ];
+                });
+        </script>
+        <div class="dvc">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <img src="img/undraw_static_assets_rpm6.svg" alt="">
+        </div>
+        <h4>Productos</h4>
+        <!-- Product -->
+        <div class="cosas">
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-title">Producto 1</p>
+                    <p class="text-body">Descripcion del Producto</p>
+                </div>
+                <div class="card-footer">
+                    <span class="text-title">$499.49</span>
+                    <div class="card-button">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                            </path>
+                            <path
+                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z
+                                    M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                            </path>
+                            <path
+                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z
+                                    M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-title">Producto 2</p>
+                    <p class="text-body">Descripcion del Producto</p>
+                </div>
+                <div class="card-footer">
+                    <span class="text-title">$499.49</span>
+                    <div class="card-button">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                            </path>
+                            <path
+                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z
+                                    M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                            </path>
+                            <path
+                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z
+                                    M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-title">Producto 3</p>
+                    <p class="text-body">Descripcion del Producto</p>
+                </div>
+                <div class="card-footer">
+                    <span class="text-title">$499.49</span>
+                    <div class="card-button">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                            </path>
+                            <path
+                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z
+                                    M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                            </path>
+                            <path
+                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z
+                                    M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-title">Producto 4</p>
+                    <p class="text-body">Descripcion del Producto</p>
+                </div>
+                <div class="card-footer">
+                    <span class="text-title">$499.49</span>
+                    <div class="card-button">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                            </path>
+                            <path
+                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z
+                                    M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                            </path>
+                            <path
+                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z
+                                    M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-title">Producto 5</p>
+                    <p class="text-body">Descripcion del Producto</p>
+                </div>
+                <div class="card-footer">
+                    <span class="text-title">$499.49</span>
+                    <div class="card-button">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                            </path>
+                            <path
+                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z
+                                    M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                            </path>
+                            <path
+                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z
+                                    M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-title">Producto 6</p>
+                    <p class="text-body">Descripcion del Producto</p>
+                </div>
+                <div class="card-footer">
+                    <span class="text-title">$499.49</span>
+                    <div class="card-button">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                            </path>
+                            <path
+                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z
+                                    M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                            </path>
+                            <path
+                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z
+                                    M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="cafe">
+        <button id="closecafe" class="nosel">Cerrar</button>
+        <h1>Cafe</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto provident ad dolore, iste unde
+            aliquam, labore obcaecati voluptas iure reprehenderit velit ratione voluptatum excepturi nostrum quod, sit
+            culpa voluptate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, facilis.</p>
+        <div class="reseta">
+            <div class="cardcafe">
+                <div class="imgreseta">
+                    <h1>Producto 1</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcafe">
+                <div class="imgreseta">
+                    <h1>Producto 2</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcafe">
+                <div class="imgreseta">
+                    <h1>Producto 3</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcafe">
+                <div class="imgreseta">
+                    <h1>Producto 4</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcafe">
+                <div class="imgreseta">
+                    <h1>Producto 5</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcafe">
+                <div class="imgreseta">
+                    <h1>Producto 6</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const cafeMenuItem = document.querySelector('#btn2');
+        const overlayElement = document.querySelector('.cafe');
+
+        cafeMenuItem.addEventListener('click', () => {
+            overlayElement.style.display = 'block';
+        });
+
+        const closeButton = document.querySelectorAll('#closecafe, #btn1, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11');
+
+        closeButton.forEach(function (button) {
+            button.addEventListener('click', function () {
+                overlayElement.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="resetas">
+        <button id="closeresetas" class="nosel">Cerrar</button>
+        <h1>Resetas</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto provident ad dolore, iste unde
+            aliquam, labore obcaecati voluptas iure reprehenderit velit ratione voluptatum excepturi nostrum quod, sit
+            culpa voluptate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, facilis.</p>
+        <div class="reseta">
+            <div class="cardreseta">
+                <div class="imgreseta">
+                    <h1>Producto 1</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardreseta">
+                <div class="imgreseta">
+                    <h1>Producto 2</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardreseta">
+                <div class="imgreseta">
+                    <h1>Producto 3</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardreseta">
+                <div class="imgreseta">
+                    <h1>Producto 4</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardreseta">
+                <div class="imgreseta">
+                    <h1>Producto 5</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardreseta">
+                <div class="imgreseta">
+                    <h1>Producto 6</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const reseMenu = document.querySelector('#btn3');
+        const resetas = document.querySelector('.resetas');
+
+        reseMenu.addEventListener('click', function () {
+            resetas.style.display = 'block';
+        });
+
+        const closeButton2 = document.querySelectorAll('#closeresetas, #btn1, #btn2, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11');
+
+        closeButton2.forEach(function (button) {
+            button.addEventListener('click', function () {
+                resetas.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="pasteles">
+        <button id="closepastel" class="nosel">Cerrar</button>
+        <h1>Pastel</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto provident ad dolore, iste unde
+            aliquam, labore obcaecati voluptas iure reprehenderit velit ratione voluptatum excepturi nostrum quod, sit
+            culpa voluptate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, facilis.</p>
+        <div class="reseta">
+            <div class="cardpastel">
+                <div class="imgreseta">
+                    <h1>Producto 1</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardpastel">
+                <div class="imgreseta">
+                    <h1>Producto 2</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardpastel">
+                <div class="imgreseta">
+                    <h1>Producto 3</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardpastel">
+                <div class="imgreseta">
+                    <h1>Producto 4</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardpastel">
+                <div class="imgreseta">
+                    <h1>Producto 5</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardpastel">
+                <div class="imgreseta">
+                    <h1>Producto 6</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const pasMenu = document.querySelector('#btn4');
+        const pasteles = document.querySelector('.pasteles');
+        pasMenu.addEventListener('click', function () {
+            pasteles.style.display = 'block';
+        });
+        const closeButton3 = document.querySelectorAll('#closepastel, #btn1, #btn2, #btn3, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11');
+        closeButton3.forEach(function (button) {
+            button.addEventListener('click', function () {
+                pasteles.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="descuento">
+        <button id="closedescuento" class="nosel">Cerrar</button>
+        <h1>Descuento</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto provident ad dolore, iste unde
+            aliquam, labore obcaecati voluptas iure reprehenderit velit ratione voluptatum excepturi nostrum quod, sit
+            culpa voluptate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, facilis.</p>
+        <div class="reseta">
+            <div class="carddes">
+                <div class="imgreseta">
+                    <h1>Producto 1</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="carddes">
+                <div class="imgreseta">
+                    <h1>Producto 2</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="carddes">
+                <div class="imgreseta">
+                    <h1>Producto 3</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="carddes">
+                <div class="imgreseta">
+                    <h1>Producto 4</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="carddes">
+                <div class="imgreseta">
+                    <h1>Producto 5</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="carddes">
+                <div class="imgreseta">
+                    <h1>Producto 6</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const desMenu = document.querySelector('#btn5');
+        const descuento = document.querySelector('.descuento');
+        desMenu.addEventListener('click', function () {
+            descuento.style.display = 'block';
+        });
+        const closeButton4 = document.querySelectorAll('#closedescuento, #btn1, #btn2, #btn3, #btn4, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11');
+        closeButton4.forEach(function (button) {
+            button.addEventListener('click', function () {
+                descuento.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="catalogo">
+        <button id="closecatalogo" class="nosel">Cerrar</button>
+        <h1>Catalogo</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto provident ad dolore, iste unde
+            aliquam, labore obcaecati voluptas iure reprehenderit velit ratione voluptatum excepturi nostrum quod, sit
+            culpa voluptate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, facilis.</p>
+        <div class="reseta">
+            <div class="cardcate">
+                <div class="imgreseta">
+                    <h1>Producto 1</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcate">
+                <div class="imgreseta">
+                    <h1>Producto 2</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcate">
+                <div class="imgreseta">
+                    <h1>Producto 3</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcate">
+                <div class="imgreseta">
+                    <h1>Producto 4</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcate">
+                <div class="imgreseta">
+                    <h1>Producto 5</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+            <div class="cardcate">
+                <div class="imgreseta">
+                    <h1>Producto 6</h1>
+                    <p>Lorem, ipsum dolor.</p>
+                    <h3>$ 200.00</h3>
+                    <img class="carro" src="img/cart-plus.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const catMenu = document.querySelector('#btn6');
+        const catalogo = document.querySelector('.catalogo');
+        catMenu.addEventListener('click', function () {
+            catalogo.style.display = 'block';
+        });
+        const closeButton5 = document.querySelectorAll('#closecatalogo, #btn1, #btn2, #btn3, #btn4, #btn5, #btn7, #btn8, #btn9, #btn10, #btn11');
+        closeButton5.forEach(function (button) {
+            button.addEventListener('click', function () {
+                catalogo.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="ubucacion">
+        <button id="closeubucacion" class="nosel">Cerrar</button>
+        <h1>Ubicacion</h1>
+        <div class="tienda">
+            <div class="ubtienda"></div>
+            <h1>Lorem, ipsum dolor.</h1>
+            <br>
+            <p style="text-align: center;">ubicacion: Lorem ipsum dolor sit amet.<br>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, laborum.<br>
+                <img class="ubica" src="img/geo-alt-fill.svg">
+            </p>
+
+        </div>
+    </div>
+    <script>
+        const ubiMenu = document.querySelector('#btn7');
+        const ubucacion = document.querySelector('.ubucacion');
+        ubiMenu.addEventListener('click', function () {
+            ubucacion.style.display = 'block';
+        });
+        const closeButton6 = document.querySelectorAll('#closeubucacion, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn8, #btn9, #btn10, #btn11');
+        closeButton6.forEach(function (button) {
+            button.addEventListener('click', function () {
+                ubucacion.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="mensaje">
+        <button id="closemensaje" class="nosel">Cerrar</button>
+        <h1>Mensajes</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto provident ad dolore, iste unde
+            aliquam, labore obcaecati voluptas iure reprehenderit velit ratione voluptatum excepturi nostrum quod, sit
+            culpa voluptate. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, facilis.</p>
+        <div class="contact-form">
+            <span class="heading">Reclamos</span>
+            <form action="https://formsubmit.co/yhordiyhom65@gmail.com" method="POST">
+                <label for="name">Usuario:</label>
+                <input type="text" name="Usuario" required="">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" required="">
+                <label for="Reclamo">Mensage:</label>
+                <textarea id="Reclamo" name="Reclamo" required=""></textarea>
+                <input type="date" name="Fecha" id="fecha">
+                <button type="submit">enviar</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        const menMenu = document.querySelector('#btn8');
+        const mensaje = document.querySelector('.mensaje');
+        menMenu.addEventListener('click', function () {
+            mensaje.style.display = 'block';
+        });
+        const closeButton7 = document.querySelectorAll('#closemensaje, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn9, #btn10, #btn11');
+        closeButton7.forEach(function (button) {
+            button.addEventListener('click', function () {
+                mensaje.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="cliente">
+        <button id="closecliente" class="nosel">Cerrar</button>
+        <div class="pUser">
+            <form method="POST">
+                <center>
+                    <div id="red">
+                        <div id="red2">
+                            <h2>Estas seguro que deseas Salir??</h2>
+                            <button type="submit" id="cancelar">Cancelar</button>
+                            <button name="cerrar">Salir</button>
+                        </div>
+                    </div>
+                    <input type="email" class="User" name="email" autocomplete="off" id="email"
+                        placeholder="Tu Email Aqui"><br>
+                    <input type="submit" id="busc" name="filtrar" value="Buscar" style="cursor: pointer;"><br>
+                    <p>
+                        <?php if (isset($resultado)) { ?>
+                        <div class="Error1">
+                            <center>DATOS</center><br>
+                            <h4>
+                                <b>Usuario :</b><?php echo $usuario; ?><br><br>
+                                <b>Email   :</b><?php echo $email2; ?><br><br>
+                                <b>Telefono:</b><?php echo $tel; ?><br><br>
+                            </h4>
+                            <center>&copy<?php echo $usuario; ?><b></b></center><br>
+                            <p>Informacion sobre su Política de Privacidad respecto del tratamiento y protección de los datos de carácter personal de los usuarios y clientes que puedan ser recabados por la navegación o contratación de servicios a través del sitio Web.</p>
+                        </div>
+                    <?php } ?>
+                    </p><br>
+                    <input type="button" id="salir" name="salir" value="Cerrar sesion" style="cursor: pointer;">
+                </center>
+                <script>
+                    const cerrarsesion = document.querySelector('#salir');
+                    const bloque = document.querySelector('#red');
+                    cerrarsesion.addEventListener('click', () => {
+                        bloque.classList.toggle('show-red');
+                    });
+
+                    const confirm = document.querySelector('#cancelar');
+                    const blok = document.querySelector('#red');
+
+                    confirm.addEventListener('click', () => {
+                        blok.classList.toggle('show-red');
+                    });
+                </script>
+            </form>
+        </div>
+    </div>
+    <script>
+        const cliMenu = document.querySelector('#btn9');
+        const cliente = document.querySelector('.cliente');
+        cliMenu.addEventListener('click', function () {
+            cliente.style.display = 'block';
+        });
+        const closeButton8 = document.querySelectorAll('#closecliente, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn10, #btn11');
+        closeButton8.forEach(function (button) {
+            button.addEventListener('click', function () {
+                cliente.style.display = 'none';
+            });
+        });
+    </script>
+    <div class="rosales">
+        <button id="closerosales" class="nosel">Cerrar</button>
+        <h1>Rosales</h1>
+        <p class="infoR">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi esse unde iusto officiis quod
+            eaque eveniet nemo cum nihil laudantium, asperiores quaerat deserunt! Enim, dolore facilis? Repellendus
+            pariatur laudantium id deserunt ad voluptate numquam voluptas, cum soluta dicta. Repellat accusantium animi
+            temporibus sequi, ullam consequatur sunt doloremque quod quisquam distinctio, quidem suscipit dolores
+            soluta, eveniet numquam vitae. Consequatur cupiditate labore cum molestiae ipsam doloremque neque aspernatur
+            sunt deserunt architecto amet earum numquam saepe pariatur accusamus, dolor eos sapiente dolorum, expedita
+            illo. Autem mollitia distinctio esse? Libero laboriosam distinctio alias similique molestiae vero inventore
+            voluptatem! Laudantium quaerat nulla ad eos.
+        </p>
+        <center>
+            <img src="img/undraw_hacker_mind_-6-y85.svg" alt="200px">
+        </center>
+        <p class="infoR2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ducimus sunt alias minima
+            ratione. Provident ad facere expedita deserunt optio tenetur quod? A culpa odio, officiis pariatur numquam
+            deleniti illum. Earum optio quam iusto nemo a praesentium et soluta. Totam excepturi illum minima mollitia
+            ipsam exercitationem fugit consequuntur, ratione quis. Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. Nihil, repellendus?</p>
+    </div>
+    <script>
+        const rosalesMenu = document.querySelector('#btn11');
+        const rosales = document.querySelector('.rosales');
+        rosalesMenu.addEventListener('click', function () {
+            rosales.style.display = 'block';
+        });
+        const closeButton10 = document.querySelectorAll('#closerosales, #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10');
+        closeButton10.forEach(function (button) {
+            button.addEventListener('click', function () {
+                rosales.style.display = 'none';
+            });
+        });
+    </script>
+    <script>
+        const menuBtn = document.querySelector('#menu-btn');
+        const contecabeza = document.querySelector('#contecabeza');
+        menuBtn.addEventListener('click', () => {
+            contecabeza.classList.toggle('show-menu');
+        });
+
+        const redesBtn = document.querySelector('#redes-btn');
+        const redes = document.querySelector('#redes');
+        redesBtn.addEventListener('click', () => {
+            redes.classList.toggle('show-redes');
+        });
+
+        const btns = document.querySelectorAll('.menu');
+
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                btns.forEach(function (otherBtn) {
+                    if (otherBtn !== btn) {
+                        otherBtn.classList.remove('clicked');
+                        localStorage.removeItem(otherBtn.id + 'Clicked');
+                    }
+                });
+                btn.classList.add('clicked');
+                localStorage.setItem(btn.id + 'Clicked', 'true');
+                contecabeza.classList.remove('show-menu'); // Agregado para cerrar #contecabeza
+            });
+
+            if (localStorage.getItem(btn.id + 'Clicked') === 'true') {
+                btn.classList.add('clicked');
+            }
+
+            const menuItems = btn.querySelectorAll('li');
+            menuItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    document.querySelector('.menu').style.display = 'none';
+                    contecabeza.classList.remove('show-menu'); // Agregado para cerrar #contecabeza
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta</title>
+    <link rel="stylesheet" href="css/Crear.css">
+</head>
+
+<body>
+    <div class="imgs">
+        <img src="img/img1.avif">
+        <img src="img/img2.avif">
+        <img src="img/img3.avif">
+        <img src="img/img4.avif">
+        <img src="img/img5.avif">
+    </div>
+    <div class="contenedor">
+        <form action="php/Guardar.php" method="post">
+            <h1>Crear</h1>
+            <label>Nombres:</label>
+            <input type="text" name="Nombres" id="Nombres">
+            <label>Apellidos:</label>
+            <input type="text" name="Apellidos" id="Apellidos">
+            <label>Correo:</label>
+            <input type="email" name="Correo" id="Correo">
+            <label>Contraseña:</label>
+            <input type="password" name="Contrasena1" id="Contrasena1">
+            <label>Repita contraseña:</label>
+            <input type="password" name="Contrasena2" id="Contrasena">
+            <div class="chbox">
+                <input type="checkbox" name="terminos" id="terminos">Aceptar los terminos de uso
+            </div>
+
+            <button type="submit" class="Crear">Crear</button>
+        </form>
+    </div>
+</body>
+
+</html>

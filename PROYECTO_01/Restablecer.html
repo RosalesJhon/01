@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña</title>
+    <link rel="stylesheet" href="css/Restablecer.css">
+</head>
+<body>
+    <div class="imgs">
+        <img src="img/img1.avif">
+        <img src="img/img2.avif">
+        <img src="img/img3.avif">
+        <img src="img/img4.avif">
+        <img src="img/img5.avif">
+    </div>
+    <div class="contenedor">
+        <form action="php/Restablcer.php" method="post">
+        <h1>Olvidaste tu contraseña?</h1>
+        <label>Correo:</label>
+        <input type="text" name="correo" id="correo">
+        <label>Apellidos:</label>
+        <input type="text" name="ape" id="ape">
+        <label>Contraseña nueva:</label>
+        <input type="password" name="pass1" id="pass1">
+        <label>Repita contraseña:</label>
+        <input type="password" name="pass2" id="pass2">
+        <input type="submit" class="Restablecer" value="Restablecer Contraseña">
+    </form>
+    </div>
+</body>
+</html>

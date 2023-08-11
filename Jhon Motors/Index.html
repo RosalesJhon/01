@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhon Motors</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor">
+            <h1>Jhon Motors</h1>
+            <img src="img/Logo.png">
+        </div>
+        <div class="cabeza">
+            <a id="menu-btn" href="#"><img src="img/icono.png" alt=""></a>
+        </div>
+        <div id="contecabeza">
+            <nav>
+                <ul>
+                    <a href="#">
+                        <li>Inicio</li>
+                    </a>
+                    <a href="#">
+                        <li>Nosotros</li>
+                    </a>
+                    <a href="#">
+                        <li>Productos</li>
+                    </a>
+                    <a href="#">
+                        <li>Repuestos</li>
+                    </a>
+                    <a href="#">
+                        <li>Catalogo</li>
+                    </a>
+                    <a href="#">
+                        <li>Contacto</li>
+                    </a>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="slider">
+            <div class="slide">
+                <img src="img/Slider1.jpg" alt="Imagen 1">
+            </div>
+            <div class="slide">
+                <img src="img/Slider2.jpg" alt="Imagen 2">
+            </div>
+            <div class="slide">
+                <img src="img/Slider3.jpg" alt="Imagen 3">
+            </div>
+            <div class="slide">
+                <img src="img/Slider4.jpg" alt="Imagen 4">
+            </div>
+            <div class="slide">
+                <img src="img/Slider5.jpg" alt="Imagen 5">
+            </div>
+            <div class="slide">
+                <img src="img/Slider6.jpg" alt="Imagen 6">
+            </div>
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+
+        <div class="categorias">
+            <h2>Categorias</h2>
+            <div class="cat">
+                <button>Pisteras</button>
+                <button>Ciudad</button>
+                <button>Scoters</button>
+                <button>Todo Terreno</button>
+            </div>
+        </div>
+    </main>
+    <div class="promociones">
+        <h2>Catalogo</h2>
+
+    </div>
+    <div class="informacion">
+        <h2>Informacion</h2>
+    </div>
+    <footer></footer>
+    <script>
+        const menuBtn = document.querySelector('#menu-btn');
+        const contecabeza = document.querySelector('#contecabeza');
+        menuBtn.addEventListener('click', () => {
+            contecabeza.classList.toggle('show-menu');
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
